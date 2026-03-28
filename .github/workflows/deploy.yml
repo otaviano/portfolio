@@ -33,11 +33,14 @@ jobs:
           remote_user: root
           remote_key: ${{ secrets.VPS_SSH_KEY }}
 
-      - name: Reload Nginx
+      - name: Ensure Nginx is running
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
           port: ${{ secrets.VPS_PORT }}
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
-          script: sudo systemctl reload nginx
+          script: |
+            which nginx || apt-get install -y nginx
+            systemctl enable nginx
+            systemctl is-active --quiet nginx && systemctl reload nginx || systemctl start nginx

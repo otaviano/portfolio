@@ -41,9 +41,7 @@ jobs:
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            systemctl is-active --quiet apache2 && systemctl stop apache2 && systemctl disable apache2 || true
-            systemctl is-active --quiet traefik && systemctl stop traefik && systemctl disable traefik || true
-            docker ps --filter "publish=80" --format "{{.ID}}" 2>/dev/null | xargs -r docker stop || true
+            fuser -k 80/tcp || true
             cat > /etc/nginx/sites-available/portfolio <<'EOF'
             server {
                 listen 80;

@@ -42,6 +42,8 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             systemctl is-active --quiet apache2 && systemctl stop apache2 && systemctl disable apache2 || true
-            which nginx || apt-get install -y nginx
+            ss -tlnp | grep :80 || true
+            nginx -t
             systemctl enable nginx
             systemctl is-active --quiet nginx && systemctl reload nginx || systemctl start nginx
+            systemctl status nginx --no-pager || true

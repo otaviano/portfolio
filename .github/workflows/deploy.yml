@@ -56,5 +56,7 @@ jobs:
             ln -sf /etc/nginx/sites-available/portfolio /etc/nginx/sites-enabled/portfolio
             rm -f /etc/nginx/sites-enabled/default
             nginx -t
-            systemctl enable nginx
-            systemctl is-active --quiet nginx && systemctl reload nginx || systemctl start nginx
+            ss -tlnp | grep :80 || true
+            systemctl enable nginx || true
+            systemctl is-active --quiet nginx && systemctl reload nginx || systemctl start nginx || true
+            journalctl -xeu nginx.service --no-pager | tail -30

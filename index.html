@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Otaviano Zibetti — Technical Leader</title>
+  <meta name="description" content="Technical Leader specialising in .NET, distributed systems and software architecture. Based in Curitiba, Brazil." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top">oz.</a>
+    <nav class="nav__links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="hero__eyebrow fade-in">Hi, I'm</p>
+      <h1 class="hero__name fade-in delay-1">Otaviano Zibetti</h1>
+      <h2 class="hero__title fade-in delay-2">Technical Leader</h2>
+      <p class="hero__sub fade-in delay-3">
+        Building scalable distributed systems and leading engineering teams.<br />
+        Based in Curitiba, Brazil &mdash; currently at <strong>Vindi (LWSA)</strong>.
+      </p>
+      <div class="hero__actions fade-in delay-4">
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+        <a class="btn btn--ghost" href="https://linkedin.com/in/otaviano-montes-zibetti" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://github.com/otaviano" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h3 class="section__label">About</h3>
+      <div class="about__grid">
+        <div class="about__text">
+          <p>
+            I'm a software engineer with over a decade of experience building
+            products across fintech, edtech and e-commerce. I specialise in
+            <strong>software architecture</strong>, <strong>Domain-Driven Design</strong>
+            and migrating monoliths to <strong>microservices</strong>.
+          </p>
+          <p>
+            As a Technical Leader at Vindi I guide engineering decisions, mentor
+            developers and make sure we ship reliable, well-crafted software.
+            I care deeply about clean code, event-driven systems and developer experience.
+          </p>
+        </div>
+        <ul class="about__facts">
+          <li><span>Role</span> Technical Leader</li>
+          <li><span>Company</span> Vindi (LWSA)</li>
+          <li><span>Location</span> Curitiba, Brazil</li>
+          <li><span>Education</span> Information Systems, PUC-PR</li>
+          <li><span>GitHub</span> <a href="https://github.com/otaviano" target="_blank" rel="noopener">otaviano</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section--alt" id="skills">
+    <div class="container">
+      <h3 class="section__label">Skills</h3>
+      <div class="skills__groups">
+        <div class="skills__group">
+          <h4>Languages</h4>
+          <div class="tags">
+            <span class="tag">C#</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Ruby</span>
+          </div>
+        </div>
+        <div class="skills__group">
+          <h4>Architecture</h4>
+          <div class="tags">
+            <span class="tag">Domain-Driven Design</span>
+            <span class="tag">Microservices</span>
+            <span class="tag">Event-Driven</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">SOLID</span>
+            <span class="tag">CQRS</span>
+          </div>
+        </div>
+        <div class="skills__group">
+          <h4>Stack</h4>
+          <div class="tags">
+            <span class="tag">.NET 10</span>
+            <span class="tag">Vue 3</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Cassandra</span>
+            <span class="tag">MediatR</span>
+            <span class="tag">FluentValidation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h3 class="section__label">Projects</h3>
+      <div class="projects__grid">
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--csharp">C#</span>
+            <a class="card__link" href="https://github.com/otaviano/interview-invoice-approval" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>Invoice Approval</h4>
+          <p>Clean Architecture API for invoice approval workflows. Features CQRS, Chain of Responsibility, Cassandra persistence and Docker Compose.</p>
+          <div class="tags tags--sm">
+            <span class="tag">.NET 10</span><span class="tag">Cassandra</span><span class="tag">Docker</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--csharp">C#</span>
+            <a class="card__link" href="https://github.com/otaviano/monthly-costs" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>Monthly Costs</h4>
+          <p>Microservice for tracking fixed monthly costs. Demonstrates DDD and microservices patterns in a real-world financial context.</p>
+          <div class="tags tags--sm">
+            <span class="tag">.NET</span><span class="tag">DDD</span><span class="tag">Microservices</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--csharp">C#</span>
+            <a class="card__link" href="https://github.com/otaviano/dotnet-knowledge.ddd" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>DDD Knowledge</h4>
+          <p>Study repository exploring Domain-Driven Design patterns and tactical building blocks in .NET.</p>
+          <div class="tags tags--sm">
+            <span class="tag">.NET</span><span class="tag">DDD</span><span class="tag">Architecture</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--ts">TypeScript</span>
+            <a class="card__link" href="https://github.com/otaviano/eleva-case-front" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>Eleva Case — Front</h4>
+          <p>Angular 10 frontend for an education platform case study, paired with a .NET backend.</p>
+          <div class="tags tags--sm">
+            <span class="tag">Angular</span><span class="tag">TypeScript</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--py">Python</span>
+            <a class="card__link" href="https://github.com/otaviano/person-api-case" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>Person API</h4>
+          <p>REST API case study built with Python — explores REST conventions and API design principles.</p>
+          <div class="tags tags--sm">
+            <span class="tag">Python</span><span class="tag">REST</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <span class="card__lang card__lang--js">JavaScript</span>
+            <a class="card__link" href="https://github.com/otaviano/react-my-money" target="_blank" rel="noopener" aria-label="View repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <h4>My Money</h4>
+          <p>Personal finance application built with React — income/expense tracking with a clean UI.</p>
+          <div class="tags tags--sm">
+            <span class="tag">React</span><span class="tag">JavaScript</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt" id="contact">
+    <div class="container contact">
+      <h3 class="section__label">Contact</h3>
+      <p class="contact__text">Open to interesting conversations about architecture, distributed systems and engineering leadership.</p>
+      <div class="contact__links">
+        <a class="contact__item" href="https://linkedin.com/in/otaviano-montes-zibetti" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+        <a class="contact__item" href="https://github.com/otaviano" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a class="contact__item" href="mailto:otaviano@example.com">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Otaviano Zibetti &mdash; Curitiba, Brazil</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

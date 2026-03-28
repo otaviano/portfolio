@@ -24,7 +24,7 @@ jobs:
           remote_user: root
           remote_key: ${{ secrets.VPS_SSH_KEY }}
 
-      - name: Start Docker Compose
+      - name: Obtain SSL certificate and start
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -32,6 +32,22 @@ jobs:
           username: root
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            fuser -k 80/tcp || true
-            cd /var/www/portfolio
+            # Install certbot if missing
+            which certbot || apt-get install -y certbot
+
+            # Stop containers to free port 80 for ACME challenge
+            cd /var/www/portfolio && docker compose down || true
+
+            # Obtain cert (skips if already valid)
+            certbot certonly --standalone \
+              --non-interactive --agree-tos \
+              --email otavianomontes@gmail.com \
+              -d otavianozibetti.tech -d www.otavianozibetti.tech \
+              --keep-until-expiring
+
+            # Set up auto-renewal cron if not already present
+            (crontab -l 2>/dev/null | grep -q certbot) || \
+              (crontab -l 2>/dev/null; echo "0 3 * * * certbot renew --quiet --deploy-hook 'cd /var/www/portfolio && docker compose restart'") | crontab -
+
+            # Start containers
             docker compose up -d --build

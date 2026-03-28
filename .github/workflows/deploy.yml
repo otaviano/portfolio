@@ -13,15 +13,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Ensure deploy directory exists
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          port: ${{ secrets.VPS_PORT }}
-          username: root
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: mkdir -p /var/www/portfolio
-
       - name: Deploy via rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
@@ -33,7 +24,7 @@ jobs:
           remote_user: root
           remote_key: ${{ secrets.VPS_SSH_KEY }}
 
-      - name: Ensure Nginx is running
+      - name: Start Docker Compose
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -42,19 +33,5 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
             fuser -k 80/tcp || true
-            cat > /etc/nginx/sites-available/portfolio <<'EOF'
-            server {
-                listen 80;
-                server_name otavianozibetti.tech www.otavianozibetti.tech;
-                root /var/www/portfolio;
-                index index.html;
-                location / {
-                    try_files $uri $uri/ =404;
-                }
-            }
-            EOF
-            ln -sf /etc/nginx/sites-available/portfolio /etc/nginx/sites-enabled/portfolio
-            rm -f /etc/nginx/sites-enabled/default
-            nginx -t
-            systemctl enable nginx
-            systemctl is-active --quiet nginx && systemctl reload nginx || systemctl start nginx
+            cd /var/www/portfolio
+            docker compose up -d --build

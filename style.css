@@ -308,12 +308,45 @@ strong { font-weight: 600; }
   grid-row: 1 / 3;
   aspect-ratio: unset;
   min-height: 320px;
+  position: relative;
+}
+.beyond__photo--tall img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .beyond__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.beyond__hobbies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.beyond__hobby {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.beyond__hobby-icon {
+  font-size: 1.5rem;
+}
+.beyond__hobby strong {
+  font-size: 0.9rem;
+}
+.beyond__hobby p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
 }
 .beyond__placeholder {
   width: 100%;

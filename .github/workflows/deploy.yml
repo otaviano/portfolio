@@ -38,6 +38,10 @@ jobs:
             # Stop containers to free port 80 for ACME challenge
             cd /var/www/portfolio && docker compose down || true
 
+            # Kill any remaining process holding port 80 (e.g. host nginx/apache)
+            fuser -k 80/tcp 2>/dev/null || true
+            sleep 2
+
             # Obtain cert (skips if already valid)
             certbot certonly --standalone \
               --non-interactive --agree-tos \
